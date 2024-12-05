@@ -1,6 +1,7 @@
 NAME := ex01
 
-SRC := 	main.cpp
+SRC := 	Span.cpp \
+		main.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

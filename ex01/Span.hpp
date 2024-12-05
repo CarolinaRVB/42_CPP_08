@@ -6,26 +6,35 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 23:34:23 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/12/04 23:44:52 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/12/05 12:00:16 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-template <typename T>
+# include <iostream>
+# include <vector>
+# include <limits>
+# include <list>
+# include <algorithm>
+
 class Span {
     private:
-        T *_N;
+        std::vector<int> _span;
+        Span();
     
     public:
-        Span();
         Span(unsigned int N);
+        Span& operator=(const Span& span);
         ~Span();
 
-        void    addÑumber(int n);
+        void    addNumber(int n);
+        void    addRange(unsigned int pos, const std::list<int> lst);
         int     shortestSpan();
         int     longestSpan();
+
+        void    printSpan() const;
           
 };
 
