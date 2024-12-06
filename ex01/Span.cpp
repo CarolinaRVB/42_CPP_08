@@ -70,7 +70,7 @@ int     Span::longestSpan() {
 
 void    Span::addRange(unsigned int pos, const std::list<int> lst) {
   
-    if (pos > _span.size())
+    if (pos > _span.size() || pos + lst.size() > _span.capacity())
         throw std::out_of_range("Position for insertion out of bounds.");
     
     std::vector<int>::iterator iter = _span.begin() + pos;

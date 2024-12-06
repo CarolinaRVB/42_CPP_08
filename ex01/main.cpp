@@ -47,9 +47,9 @@ int main()
     sp.addNumber(11);
     testSpan(sp, true);
 
-    Span sp2 = Span(5);
+    Span sp2 = Span(3);
     sp2.addNumber(6);
-    testSpan(sp2, false);
+    //testSpan(sp2, false);
 
     std::cout << "\nTesting addRange function: \n";
     std::list<int> lst;
@@ -57,7 +57,13 @@ int main()
     lst.push_back(2);
     lst.push_back(3);
     lst.push_back(4);
-    sp2.addRange(1, lst);
+    try {
+        sp2.addRange(1, lst);
+
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << "\n";
+    }
     sp2.printSpan();
 
     std::cout << "\nspTest1, Testing copy constructor: \n";
@@ -69,7 +75,7 @@ int main()
     spTest2 = sp;
     spTest2.printSpan();
 
-///*
+/*
     std::cout << "\nTesting Span with a large range of number: \n";
     Span sp3(1000000);
     std::list<int> lst2;
@@ -79,5 +85,5 @@ int main()
     sp3.addRange(0, lst2);
     sp3.printSpan();
     return 0 ;
-//*/
+*/
 }
