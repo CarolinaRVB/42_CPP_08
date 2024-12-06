@@ -9,7 +9,7 @@
 
 
     Note:
-    iterating assoative containers require handling key-value pairs.
+    iterating associative containers require handling key-value pairs.
 
     it is not directly possible to iterate through container adapters 
     (like std::stack, std::queue, and std::priority_queue) because 

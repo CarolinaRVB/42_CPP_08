@@ -16,6 +16,14 @@ Span::Span(unsigned int N) {
     _span.reserve(N);
 }
 
+/*
+    Here the program is calling the copy assignement operator of std::vector
+    which performs a deep copy.
+*/
+Span::Span(const Span& obj) {
+    _span = obj._span;
+}
+
 Span::~Span() {
 }
 
@@ -50,7 +58,6 @@ int     Span::shortestSpan() {
     return shortest;
 }
 
-
 int     Span::longestSpan() {
     if (_span.size() < 2)
         throw std::length_error("Span vector too short.") ;
@@ -75,10 +82,3 @@ void    Span::printSpan() const {
         std::cout << "Span member: " << _span[i] << "\n";
     }
 }
-
-// void    Span::addRange(std::vector<int>::const_iterator pos, const std::list<int> lst) {
-//     if (pos > _span.cend())
-//         throw std::out_of_range("Position for insertion out of bounds.");
-    
-//     _span.insert(pos, lst.cbegin(), lst.cend());
-// }

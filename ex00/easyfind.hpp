@@ -14,9 +14,6 @@ typename T::iterator easyfind(T &container, int val) {
         throw std::exception();
 
     return iter;
-    // int index = std::distance(container.begin(), iter);
-
-    // return index;
 }
 
 #endif

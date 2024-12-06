@@ -12,13 +12,21 @@
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
-
 # include <iostream>
 # include <vector>
+# include <deque>
 # include <limits>
 # include <list>
 # include <algorithm>
 
+/* 
+    Chose std::vector container since it's a dynamic array that provides 
+    random access and can reserve blocks of memory.
+    Could've used deque as well (efficient for begin and end insertions, but doesn't
+    allow reservation of memory blocks)
+    List requires iterating to acess element - doesn't provide direct access 
+    of elements by index so it wasn't a good choice for this exercise.
+*/
 class Span {
     private:
         std::vector<int> _span;
@@ -26,6 +34,7 @@ class Span {
     
     public:
         Span(unsigned int N);
+        Span(const Span& obj);
         Span& operator=(const Span& span);
         ~Span();
 
